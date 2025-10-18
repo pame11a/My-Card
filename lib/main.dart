@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -17,32 +18,76 @@ class MeuApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Container(
-                height: 100.0, //altura
-                width: 100.0, //largura
-                color: Colors.white,
-                child: Text('Container one'),
+              CircleAvatar(
+                backgroundImage: AssetImage('imagens/user_logo.jpg'),
+                radius: 50.0,
+              ),
+              Text(
+                'Nome',
+                style: TextStyle(
+                  fontSize: 30.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Fondamento',
+                ),
+              ),
+              Text(
+                'PROFISSÃO',
+                style: TextStyle(
+                  fontSize: 15.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'SourcePro',
+                  letterSpacing: 2.0,
+                ),
               ),
               SizedBox(
-                height: 20.0, //altura
+                height: 20.0,
+                width: 250.0,
+                child: Divider(color: Colors.white,
+                ),
               ),
-              Container(
-                height: 100.0, //altura
-                width: 100.0, //largura
+              Card(
                 color: Colors.white,
-                child: Text('Container two'),
+                margin: EdgeInsets.symmetric(
+                    vertical: 10.0,
+                    horizontal: 25.0,
+                ),
+                child: ListTile(leading: Icon(
+                    Icons.phone,
+                    size: 20.0,
+                    color: corAzulPersonalizada,
+                ),
+                title: Text(
+                  '+55 (15) 98765-9688',
+                  style: TextStyle(
+                    fontSize: 15.0,
+                    color: corAzulPersonalizada,
+                    fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
-              SizedBox(
-                height: 20.0, //altura
-              ),
-              Container(
-                height: 100.0, //altura
-                width: 100.0, //largura
+              Card(
+                margin: EdgeInsets.symmetric(
+                  vertical: 10.0,
+                  horizontal: 25.0,
+                ),
                 color: Colors.white,
-                child: Text('Container Three'),
-              ),
-              SizedBox(
-                height: 20.0, //altura
+                  child: ListTile(leading: Icon(
+                    Icons.alternate_email,
+                    size: 20.0,
+                    color: corAzulPersonalizada,
+                  ),
+                  title: Text(
+                    'nome@gmail.com',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: corAzulPersonalizada,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
